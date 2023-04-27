@@ -18,17 +18,15 @@ export default function Sidebar() {
   let words: Word[] = [];
 
   for (let i = 1; i <= 50; i++) {
-    words.push({ id: i, word: "word" + i });
+    words.push({ id: i, word: "So'z" + i });
   }
 
   return (
     <div
-      id="sidebar"
-      className={
-        "fixed top-0 left-0 bg-sidebar h-full " +
-        "text-white text-center py-4 overflow-scroll"
-      }
+      className="bg-sidebar text-white text-center min-h-full"
     >
+      <h3 className="py-4">Topilgan soʻzlar</h3>
+      <hr className="border-line border-1 mb-4 w-4/5 mx-auto" />
       <ul>
         {words.map((word: Word) => (
           <li key={word.id} className="p-1">

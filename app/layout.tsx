@@ -1,10 +1,11 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Izohli lug'at",
+  icons: {
+    icon: { url: '/dic.png', type: 'image/png' },
+    shortcut: { url: '/dic.png', type: 'image/png' }
+  }
 };
 
 export default function RootLayout({

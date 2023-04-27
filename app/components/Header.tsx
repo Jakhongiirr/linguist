@@ -22,7 +22,7 @@ export default function Header({}) {
   }
 
   return (
-    <div className="p-3 bg-header-default text-white fixed top-0 right-0">
+    <div className="p-3 bg-header-default text-white w-full">
       <div id="header" className="flex justify-around">
         <div className="font-bold">
           {" "}
@@ -62,9 +62,7 @@ export default function Header({}) {
           </form>{" "}
         </div>
       </div>
-      <div className="pt-1">
-        <hr className="border-line border-1" />
-      </div>
+        <hr className="border-line border-1 mt-1" />
       <div id="header-buttons" className="flex flex-row pt-1 text-header-text">
         {buttons.map((button) => (
           <button

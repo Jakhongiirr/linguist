@@ -17,6 +17,10 @@ module.exports = {
         line: "#4d4541",
         hover: "#504444",
       },
+      spacing: {
+        'sidebar': "13.5%",
+        'header': "86.5%"
+      }
     },
   },
   plugins: [],

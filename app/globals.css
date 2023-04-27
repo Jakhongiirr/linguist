@@ -12,10 +12,6 @@ body {
   margin-top: 140%;
 }
 
-#sidebar {
-  min-width: 13.5%;
-}
-
 #activeBtn {
   background-color: #504444;
   color: white
