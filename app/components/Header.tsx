@@ -1,6 +1,26 @@
 "use client";
+import { useState } from "react";
 
-export default function Header() {
+interface Button {
+  id: number;
+  label: string;
+}
+
+export default function Header({}) {
+  const [activeButton, setActiveButton] = useState<number>(1);
+
+  const buttons: Button[] = [
+    { id: 1, label: "Hammasi" },
+    { id: 2, label: "Lugʻat" },
+    { id: 3, label: "Tezis" },
+    { id: 4, label: "Wikipedia" },
+  ];
+
+  function handleButtonClick(buttonId: number) {
+    setActiveButton(buttonId);
+    // to do: display the corresponding info when button is clicked
+  }
+
   return (
     <div className="p-3 bg-header-default text-white fixed top-0 left-0 right-0">
       <div id="header" className="flex justify-around">
@@ -42,30 +62,23 @@ export default function Header() {
           </form>{" "}
         </div>
       </div>
-      <div className="pt-3">
+      <div className="pt-1">
         <hr className="border-line border-1" />
       </div>
-      <div className="flex flex-row pt-1 text-header-text">
-        <div className="">
-          <button className="px-2 rounded hover:bg-hover hover:text-white">
-            Hammasi
+      <div id="header-buttons" className="flex flex-row pt-1 text-header-text">
+        {buttons.map((button) => (
+          <button
+            className={
+              `mx-1 px-2 rounded hover:bg-hover hover:text-white ` +
+              (activeButton === button.id ? "activeBtn" : "")
+            }
+            key={button.id}
+            onClick={() => handleButtonClick(button.id)}
+          >
+            {" "}
+            {button.label}{" "}
           </button>
-        </div>
-        <div className="">
-          <button className="px-2 rounded hover:bg-hover hover:text-white">
-            Lugat
-          </button>
-        </div>
-        <div className="">
-          <button className="px-2 rounded hover:bg-hover hover:text-white">
-            Tezis
-          </button>
-        </div>
-        <div className="">
-          <button className="px-2 rounded hover:bg-hover hover:text-white">
-            Wikipedia
-          </button>
-        </div>
+        ))}
       </div>
     </div>
   );

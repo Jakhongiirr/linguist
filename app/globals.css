@@ -12,6 +12,11 @@ body {
   margin-top: 140%;
 }
 
+.activeBtn {
+  background-color: #504444;
+  color: white
+}
+
 /* Scrollbar - will be added */
 /* body::-webkit-scrollbar {
   background-color: #fff;
