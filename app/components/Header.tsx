@@ -22,7 +22,7 @@ export default function Header({}) {
   }
 
   return (
-    <div className="p-3 bg-header-default text-white fixed top-0 left-0 right-0">
+    <div className="p-3 bg-header-default text-white fixed top-0 right-0">
       <div id="header" className="flex justify-around">
         <div className="font-bold">
           {" "}
@@ -68,10 +68,8 @@ export default function Header({}) {
       <div id="header-buttons" className="flex flex-row pt-1 text-header-text">
         {buttons.map((button) => (
           <button
-            className={
-              `mx-1 px-2 rounded hover:bg-hover hover:text-white ` +
-              (activeButton === button.id ? "activeBtn" : "")
-            }
+            id={activeButton === button.id ? "activeBtn" : ""}
+            className="mx-1 px-2 rounded hover:bg-hover hover:text-white"
             key={button.id}
             onClick={() => handleButtonClick(button.id)}
           >

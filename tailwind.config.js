@@ -13,7 +13,7 @@ module.exports = {
           text: "#aca3a2"
         },
         body: "#30241c",
-        sidebar: "#382c2c",
+        sidebar: "#463b3b",
         line: "#4d4541",
         hover: "#504444",
       },
