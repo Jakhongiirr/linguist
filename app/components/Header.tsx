@@ -1,19 +1,20 @@
 "use client";
 import { useState } from "react";
+import { Labels } from "../enums/sectionEnums";
 
 interface Button {
   id: number;
-  label: string;
+  label: Labels;
 }
 
 export default function Header({}) {
   const [activeButton, setActiveButton] = useState<number>(1);
 
   const buttons: Button[] = [
-    { id: 1, label: "Hammasi" },
-    { id: 2, label: "Lugʻat" },
-    { id: 3, label: "Tezis" },
-    { id: 4, label: "Wikipedia" },
+    { id: 1, label: Labels.ALL },
+    { id: 2, label: Labels.DICT },
+    { id: 3, label: Labels.THES },
+    { id: 4, label: Labels.WIKI },
   ];
 
   function handleButtonClick(buttonId: number) {

@@ -3,8 +3,8 @@ import "./globals.css";
 export const metadata = {
   title: "Izohli lug'at",
   icons: {
-    icon: { url: '/dic.png', type: 'image/png' },
-    shortcut: { url: '/dic.png', type: 'image/png' }
+    icon: { url: '/public/dic.png', type: 'image/png' },
+    shortcut: { url: '/public/dic.png', type: 'image/png' }
   }
 };
 

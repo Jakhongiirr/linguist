@@ -19,7 +19,8 @@ module.exports = {
       },
       spacing: {
         'sidebar': "13.5%",
-        'header': "86.5%"
+        'header': "86.5%",
+        'body': '86.5%'
       }
     },
   },

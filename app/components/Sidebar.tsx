@@ -7,7 +7,7 @@ interface Word {
 }
 
 export default function Sidebar() {
-  const [activeWord, setActiveWord] = useState(1);
+  const [activeWord, setActiveWord] = useState<number>(1);
 
   function handleWordClick(id: number) {
     setActiveWord(id);
@@ -25,9 +25,7 @@ export default function Sidebar() {
     <div
       className="bg-sidebar text-white text-center min-h-full"
     >
-      <h3 className="py-4">Topilgan soʻzlar</h3>
-      <hr className="border-line border-1 mb-4 w-4/5 mx-auto" />
-      <ul>
+      <ul className="pt-14">
         {words.map((word: Word) => (
           <li key={word.id} className="p-1">
             {" "}
