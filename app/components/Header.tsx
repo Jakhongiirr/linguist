@@ -7,19 +7,18 @@ interface Button {
   label: Labels;
 }
 
+const buttons: Button[] = [
+  { id: 1, label: Labels.ALL },
+  { id: 2, label: Labels.DICT },
+  { id: 3, label: Labels.THES },
+  { id: 4, label: Labels.WIKI },
+];
+
 export default function Header({}) {
   const [activeButton, setActiveButton] = useState<number>(1);
 
-  const buttons: Button[] = [
-    { id: 1, label: Labels.ALL },
-    { id: 2, label: Labels.DICT },
-    { id: 3, label: Labels.THES },
-    { id: 4, label: Labels.WIKI },
-  ];
-
   function handleButtonClick(buttonId: number) {
     setActiveButton(buttonId);
-    // to do: display the corresponding info when button is clicked
   }
 
   return (

@@ -6,20 +6,22 @@ interface Word {
   word: string;
 }
 
-export default function Sidebar() {
+// mock words
+  // to do: get real words as param from state
+  let _words: Word[] = [];
+
+  for (let i = 1; i <= 50; i++) {
+    _words.push({ id: i, word: "So'z" + i });
+  }
+
+export default function Sidebar({ words }: { words: Word[] }) {
   const [activeWord, setActiveWord] = useState<number>(1);
 
   function handleWordClick(id: number) {
     setActiveWord(id);
   }
 
-  // mock words
-  // to do: get real words as param from state
-  let words: Word[] = [];
-
-  for (let i = 1; i <= 50; i++) {
-    words.push({ id: i, word: "So'z" + i });
-  }
+  words = _words;
 
   return (
     <div

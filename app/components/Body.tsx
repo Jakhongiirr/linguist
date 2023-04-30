@@ -8,23 +8,42 @@ interface Section {
 }
 
 const sections: Section[] = [
-  { id: 1, label: Labels.ALL },
   { id: 2, label: Labels.DICT },
   { id: 3, label: Labels.THES },
   { id: 4, label: Labels.WIKI },
 ];
 
 export function Body() {
-  const [activeSection, setActiveSection] = useState<number>(1);
+  const [activeSection, setActiveSection] = useState<number[]>([1]);
+
+  function handleSectionClick(ids: number[]) {
+    setActiveSection(ids);
+  }
 
   return (
     <div id="body">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium odio
-      eaque nostrum laborum similique quo temporibus sunt adipisci doloremque
-      harum odit quam et recusandae, cumque accusantium praesentium deserunt
-      neque voluptate beatae iste soluta nemo atque iure nulla. Mollitia
-      provident praesentium quas, asperiores id cum, vel rerum corrupti
-      consequuntur perspiciatis quia.
+      <div className="text-center">
+        {sections.map((section: Section) => {
+          return (
+            <div
+              key={section.id}
+              className={
+                activeSection.indexOf(section.id) !== -1 ? "activeSection" : "inactiveSection"
+              }
+              onClick={() =>
+                handleSectionClick(
+                  activeSection.indexOf(section.id) !== -1
+                    ? activeSection.filter((id: number) => id !== section.id)
+                    : [...activeSection, section.id]
+                )
+              }
+            >
+              {" "}
+              <h1> {section.label} </h1>{" "}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
