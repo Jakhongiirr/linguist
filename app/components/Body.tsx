@@ -13,7 +13,7 @@ const sections: Section[] = [
   { id: 4, label: Labels.WIKI },
 ];
 
-export function Body() {
+export function Body({ input }: { input: string }) {
   const [activeSection, setActiveSection] = useState<number[]>([1]);
 
   function handleSectionClick(ids: number[]) {
@@ -22,13 +22,15 @@ export function Body() {
 
   return (
     <div id="body">
-      <div className="text-center">
+      {/* <div className="text-center">
         {sections.map((section: Section) => {
           return (
             <div
               key={section.id}
               className={
-                activeSection.indexOf(section.id) !== -1 ? "activeSection" : "inactiveSection"
+                activeSection.indexOf(section.id) !== -1
+                  ? "activeSection"
+                  : "inactiveSection"
               }
               onClick={() =>
                 handleSectionClick(
@@ -43,7 +45,8 @@ export function Body() {
             </div>
           );
         })}
-      </div>
+      </div> */}
+      { input }
     </div>
   );
 }

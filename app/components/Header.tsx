@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Labels } from "../enums/sectionEnums";
 
 interface Button {
@@ -14,11 +14,16 @@ const buttons: Button[] = [
   { id: 4, label: Labels.WIKI },
 ];
 
-export default function Header({}) {
+export default function Header({ handleInput }: { handleInput: Function }) {
   const [activeButton, setActiveButton] = useState<number>(1);
 
   function handleButtonClick(buttonId: number) {
     setActiveButton(buttonId);
+  }
+
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+    e.preventDefault();
+    handleInput(e.target.value)
   }
 
   return (
@@ -55,6 +60,7 @@ export default function Header({}) {
               <input
                 type="search"
                 name="q"
+                onChange={(e) => handleInputChange(e)}
                 className="py-1 text-sm text-white rounded-md pl-10 bg-header-default border-2 border-line focus:outline-none"
                 placeholder="qidiruv..."
               />
